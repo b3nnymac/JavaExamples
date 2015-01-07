@@ -1,0 +1,14 @@
+#BlueJ class context
+comment0.params=value
+comment0.target=void\ setDebug(boolean)
+comment1.params=
+comment1.target=GameRandomNumber\ getInstance()
+comment2.params=
+comment2.target=GameRandomNumber()
+comment3.params=
+comment3.target=int\ next()
+comment3.text=\n\ returns\ the\ next\ random\ number\ between\ 0\ and\ 9\ inclusive\n\ @return\ random\ number\n
+comment4.params=range
+comment4.target=int\ next(int)
+comment4.text=\n\ returns\ the\ next\ random\ number\ between\ 0\ and\ Range\ exclusive\n\ @return\ random\ number\n
+numComments=5

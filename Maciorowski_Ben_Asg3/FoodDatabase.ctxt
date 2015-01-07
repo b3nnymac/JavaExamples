@@ -1,0 +1,14 @@
+#BlueJ class context
+comment0.params=
+comment0.target=FoodDatabase()
+comment0.text=\n\ Constructor\ for\ objects\ of\ class\ FoodDatabase\n
+comment1.params=food
+comment1.target=void\ addFoodToArray(Food)
+comment1.text=\n\ Adds\ food\ items\ and\ their\ calories\ to\ the\ foods\ array\n\ @param\ a\ food\ object\n\ @param\ the\ index\ number\ of\ the\ foods\ array\ where\ the\ newly\ created\ food\ object\ is\ added\ to\n
+comment2.params=index
+comment2.target=Food\ getArray(int)
+comment2.text=\n\ Provides\ a\ specific\ emelent\ in\ the\ foods\ arrayList\ from\ a\ given\ index\ value\n\ @param\ index\ \n\ @return\ Food\ element\n
+comment3.params=
+comment3.target=int\ getSize()
+comment3.text=\n\ Provides\ the\ size\ of\ the\ foods\ arrayList\ \n\ @return\ Foods\ size\n
+numComments=4

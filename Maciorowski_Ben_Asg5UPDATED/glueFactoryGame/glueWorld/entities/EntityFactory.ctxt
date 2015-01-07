@@ -1,0 +1,5 @@
+#BlueJ class context
+comment0.params=info\ world
+comment0.target=Entity\ buildFromStream(java.util.Scanner,\ glueFactoryGame.glueWorld.GlueWorld)
+comment0.text=\n\ Builds\ a\ single\ entity\ based\ upon\ information\ read\ in\ from\ the\ scanner\ and\ adds\ it\ to\n\ the\ world\n\ @param\ info\ the\ scanner\ to\ use\n\ @param\ world\ the\ world\ object\ used\ to\ validate\ and\ set\ up\ information\n\ @throws\ UnknownEntity\ if\ the\ data\ could\ not\ be\ interpreted\ as\ a\ proper\ entity\n\ @return\ returns\ the\ entity\ that\ was\ made\n
+numComments=1

@@ -1,0 +1,11 @@
+#BlueJ class context
+comment0.params=row\ col\ displayImg\ numberGlueBombs
+comment0.target=User(int,\ int,\ glueFactoryGame.glueWorld.GameImage,\ int)
+comment0.text=\n\ Constructor\ for\ objects\ of\ class\ User\n
+comment1.params=where
+comment1.target=void\ move(glueFactoryGame.Direction)
+comment2.params=
+comment2.target=int\ getNumberGlueBombs()
+comment3.params=where
+comment3.target=void\ placeGlueBomb(glueFactoryGame.Direction)
+numComments=4

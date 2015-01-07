@@ -1,0 +1,17 @@
+#BlueJ class context
+comment0.params=controller\ updateDelay
+comment0.target=UpdateThread(GameController,\ long)
+comment0.text=\n\ Constructor\n\ @param\ controller\ reference\ \ to\ the\ main\ game\ controller\n\ @param\ updateDelay\ the\ amount\ of\ time\ to\ delay\ between\ updates\ (in\ mil\ sec)\n
+comment1.params=
+comment1.target=void\ shutDown()
+comment1.text=\n\ Request\ for\ the\ thread\ to\ shut\ down\n
+comment2.params=
+comment2.target=boolean\ shouldShutDown()
+comment2.text=\n\ check\ for\ shut\ down\n
+comment3.params=
+comment3.target=boolean\ isRunning()
+comment3.text=\n\ checks\ to\ see\ if\ the\ thread\ is\ still\ running\ \n
+comment4.params=
+comment4.target=void\ run()
+comment4.text=\n\ Main\ method\ for\ execution\ of\ the\ updated\ thread\n
+numComments=5

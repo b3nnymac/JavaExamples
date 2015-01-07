@@ -1,0 +1,288 @@
+/**
+ *Set up Health Tracker Menus to Receive User Input
+ * @BenMac
+ * @version 1.0
+ * Last Modified: September 14, 2014 - Created By Ben Maciorowski
+ */
+
+import userCommunication.*;
+import java.util.*;
+
+public class HealthTracker 
+{
+    private UserInteraction comm = new UserInteraction();
+    private Menu options;
+    private MenuOption choice = null;
+    private Person person;
+    private FileLoader loader = new FileLoader();
+
+    public static final int DATABASE_SIZE = 20;
+    private Person[] personArray= new Person[DATABASE_SIZE];
+    private Food[] foods;
+    private Excercise[] excercises;
+    private int numOfFoods = 0;
+    private int  numOfExcercises = 0;
+
+    private int count = 0;
+
+    public void run(String fileName)
+    {
+        loader.openFile(fileName);
+        loader.foodExcerciseLoader();
+        loader.printDBArray();
+        setUpMenu();
+        boolean exit = false;
+        do
+        {
+            choice = options.getUserChoice();
+
+            System.out.println("The user selected: " + choice.getOption());
+            switch(choice.getOption())
+            {
+                case "a": 
+                if(loader.checkIfSpaceAvailable()){ loader.addTrainee(getHealthInfo());}
+                else{System.out.println("There are currently no free spaces available in your health tracker database");}
+                loader.printDBArray();
+                comm.pause();
+                break;
+
+                case "b":
+                int availableSpace = 0;
+                availableSpace = comm.getInput_IntBetween("Please enter the # of the trainee you'd like to remove from the database: ", 1, DATABASE_SIZE);
+                if(!loader.checkIfSpecificSpaceAvailable(availableSpace-1)){loader.removeTrainee(availableSpace-1);}
+                else{System.out.println("There is not a trainee at that database location"); }
+                loader.printDBArray();
+                comm.pause();
+                break;
+
+                case "c":
+                loader.printDBArray();
+                editMenuOptions(comm.getInput_IntBetween("Please enter the # of the trainee you'd like to edit: ", 1, DATABASE_SIZE)-1);
+                comm.pause();
+                break;
+
+                case "d":
+                loader.printDBArray();
+                int listChoice = comm.getInput_IntBetween("Please enter the # of the trainee whose information you'd like to list: ", 1, DATABASE_SIZE)-1;
+                if(loader.personArray[listChoice]!=null){System.out.println(loader.personArray[listChoice].toString());}
+                else{System.out.println("There is not a trainee at your selected location");}
+                comm.pause();
+                break;
+
+                case "e":
+                addFood();
+                comm.pause();
+                break;
+
+                case "f":
+                addExcercise();
+                comm.pause();
+                break;
+
+                case "q":
+                exit = true;
+                System.out.println("Bye!");
+                break;
+
+            }
+        }
+        while(!exit);
+
+    }
+
+    public void addTrainee(Person person){
+        for(int num = 0; num < personArray.length; num++){
+            if(personArray[num] == null) 
+            {personArray[num] = person; count++; break;}
+        }
+    }
+
+    /**
+     * sets up the main menus   
+     */
+    private void setUpMenu(){
+        options = new Menu(comm);
+
+        options.addMenuOption("a","Add Trainee");
+        options.addMenuOption("b","Remove Trainee");
+        options.addMenuOption("c","Edit Trainee");
+        options.addMenuOption("d","List");
+        options.addMenuOption("e","Add Food");
+        options.addMenuOption("f","Add Excercise");
+        options.addMenuOption("q","Quit");   
+
+    }
+
+    /**
+     * Asks the user to input their required health info
+     * @return person object
+     */
+    private Person getHealthInfo() {
+        Person person;
+        Scanner keyboard = new Scanner(System.in); 
+
+        String fullName = comm.getInput_String("\nPlease enter the new trainee's name: ");
+        double weight = comm.getInput_DoubleBetween("\nPlease enter the trainee's weight in kilograms: ", 10, 907);   
+        int age = comm.getInput_IntBetween("\nPlease enter their age: ", 1, 170);
+        double height = comm.getInput_DoubleBetween("\nPlease enter their height in centimetres: ", 20, 300);
+        System.out.println();
+        String gender = setUpGenderMenu();
+        System.out.println();
+        double activityLevel = setUpActivityMenu();
+        person = new Person(fullName,  weight, age,  height,  gender,  activityLevel);
+
+        return person; 
+
+    }
+
+    /**
+     * Sets up a menu with 3 gender options and waits for user to enter gender option, coverts option to numerical 
+     * representation 0=male, 1=female, 2=gender neutral
+     * @return the numerical representation of the user's gender
+     */
+    private String setUpGenderMenu(){
+        Menu genderOptions = new Menu(comm);
+
+        String gender = "";
+        genderOptions.addMenuOption("M", "Male", person.MALE);
+        genderOptions.addMenuOption("F","Female", person.FEMALE);
+        genderOptions.addMenuOption("G","Gender Neutral", person.GENDER_NEUTRAL);
+
+        choice = genderOptions.getUserChoice("Enter Gender: ");
+
+        comm.println("The user selected: " + choice.getdescription());
+
+        gender = choice.getdescription();
+        //         switch (choice.getOption()){
+        //             case "m":
+        //             gender = "Male";
+        //             break;
+        //             case "f":
+        //             gender = "Female";
+        //             break;
+        //             case "g":
+        //             gender = "Gender Neutral";
+        //             break;
+        //         }
+
+        return gender;
+    }
+
+    /**
+     * Sets up an activity level option menu for the user and waits to receive their selection
+     * @retun the numerical representation of the user's activity level
+     */
+    private double setUpActivityMenu(){
+        Menu activityOptions = new Menu(comm);
+        double activityLevelChoice = 0;
+
+        activityOptions.addMenuOption("1", "Little to no exercise", person.LITTLE_TO_NO_EXCERCISE);
+        activityOptions.addMenuOption("2","Light exercise (1–3 days per week)", person.LIGHT_EXCERCISE);
+        activityOptions.addMenuOption("3","Moderate exercise (3–5 days per week)", person.MODERATE_EXCERCISE);
+        activityOptions.addMenuOption("4","Heavy exercise (6–7 days per week)", person.HEAVY_EXCERCISE);
+        activityOptions.addMenuOption("5","Very heavy exercise (twice per day, extra heavy workouts)", person.VERY_HEAVY_EXCERCISE);
+
+        choice = activityOptions.getUserChoice("Enter Choice: ");
+
+        comm.println("The user selected: " + choice.getdescription());
+        switch(choice.getOption()){
+            case "1": activityLevelChoice = person.LITTLE_TO_NO_EXCERCISE;
+            break;
+            case "2": activityLevelChoice = person.LIGHT_EXCERCISE;
+            break;
+            case "3": activityLevelChoice = person.MODERATE_EXCERCISE;
+            break;
+            case "4": activityLevelChoice = person.HEAVY_EXCERCISE;
+            break;
+            case "5": activityLevelChoice = person.VERY_HEAVY_EXCERCISE;
+            break;
+        }
+
+        return activityLevelChoice;
+    }
+
+    /**
+     * The edit options from the main menu; asks the user which informationy the would like to edit
+     */
+    private void editMenuOptions(int traineeNumberToEdit){
+        if (comm.getInput_char("Do you want to edit weight? y/n: ", "y n") == 'Y'){
+            loader.personArray[traineeNumberToEdit].setWeight(comm.getInput_DoubleBetween("\nPlease enter new weight in kilograms: ", 10, 907));}
+        if (comm.getInput_char("Do you want to edit age? y/n: ", "y n") == 'Y'){
+            loader.personArray[traineeNumberToEdit].setAge(comm.getInput_IntBetween("\nPlease enter new age: ", 1, 170));}
+        if (comm.getInput_char("Do you want to edit height? y/n: ", "y n") == 'Y'){
+            loader.personArray[traineeNumberToEdit].setHeight(comm.getInput_DoubleBetween("\nPlease enter your height in centimetres: ", 20, 300));}
+        if (comm.getInput_char("Do you want to edit activity level? y/n: ", "y n") == 'Y'){
+            loader.personArray[traineeNumberToEdit].setActivityLevel(setUpActivityMenu());
+            setUpMenu();}
+    }
+
+    private void addFood(){
+        Menu foodOptions = new Menu(comm);
+        loader.printDBArray();
+        int traineeChoice = comm.getInput_IntBetween("Which trainee would you like to add calories to: ", 1, DATABASE_SIZE);
+
+        if(!loader.checkIfSpecificSpaceAvailable(traineeChoice-1)){
+            int foodChoice = 0;
+
+            for(int num = 0; num < loader.numOfFoods; num++){
+                foodOptions.addMenuOption("" + num, loader.foods[num].toString(), num);
+            }
+            foodChoice = foodOptions.getUserChoiceInt();
+
+            double servings = comm.getInput_DoubleGreaterThan(String.format("How many servings of %s did %s consume: " , loader.foods[foodChoice].getName() , loader.personArray[traineeChoice -1].getFullName()) , 0);
+            loader.personArray[traineeChoice-1].addCalories(loader.foods[foodChoice].getCalories() * servings);
+
+        }
+
+        else System.out.println("There is not a trainee at the selected database location");
+    }
+
+    private void addExcercise(){
+        Menu excerciseOptions = new Menu(comm);
+        loader.printDBArray();
+        int traineeChoice = comm.getInput_IntBetween("Which trainee would you like to add an excercise to: ", 1, DATABASE_SIZE);
+
+        if(!loader.checkIfSpecificSpaceAvailable(traineeChoice-1)){
+            int excerciseChoice = 0;
+
+            for(int num = 0; num < loader.numOfExcercises; num++){
+                excerciseOptions.addMenuOption("" + num, loader.excercises[num].toString(), num);
+            }
+            excerciseChoice = excerciseOptions.getUserChoiceInt();
+
+            double minutes = comm.getInput_DoubleGreaterThan(String.format("How many minutes of %s did %s perform: " , loader.excercises[excerciseChoice].getName() , loader.personArray[traineeChoice -1].getFullName())  , 0);
+            loader.personArray[traineeChoice-1].addCalories(loader.excercises[excerciseChoice].getCalories()*minutes);
+
+        }
+
+        else System.out.println("There is not a trainee at the selected database location");
+
+    }    
+
+    public void instantiateFoodArray(int numOfFoods){
+        foods = new foods[numOfFoods];    
+    }
+
+
+    public void addFoodToArray(Food food){
+
+        for (int foodCount = 0; foodCount<foods.length;foodCount++){
+            line = inputFile.nextLine();
+            String[] foodParts = line.split(",");
+            String foodName = foodParts[0];
+            int calories = Integer.parseInt(foodParts[1]);
+            foods[foodCount] = new Food(foodName, calories);
+
+        }
+        comm.print(""+ numOfFoods + " foods were added to the database\n");
+        for (int excerciseCount = 0; excerciseCount<excercises.length;excerciseCount++){
+            line = inputFile.nextLine();
+            String[] excerciseParts = line.split(",");
+            String excerciseName = excerciseParts[0];
+            int calories = Integer.parseInt(excerciseParts[1]);
+            excercises[excerciseCount] = new Excercise(excerciseName, calories);
+        }
+        comm.print(""+ numOfExcercises + " excercise were added to the database\n");
+        comm.pause();
+    }
+}

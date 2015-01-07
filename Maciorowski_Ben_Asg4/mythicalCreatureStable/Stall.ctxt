@@ -1,0 +1,27 @@
+#BlueJ class context
+comment0.params=stallName\ type\ occupant
+comment0.target=Stall(java.lang.String,\ java.lang.String,\ java.lang.String)
+comment0.text=\n\ Constructor\ for\ objects\ of\ class\ Stall\n
+comment1.params=name\ type\ age\ weight\ strength
+comment1.target=void\ addCreature(java.lang.String,\ java.lang.String,\ int,\ int,\ int)
+comment1.text=\n\ \ adds\ a\ creatues\ to\ the\ stall\ with\ parameters\n
+comment2.params=creature
+comment2.target=void\ addCreature(Creature)
+comment2.text=\n\ \ adds\ a\ complete\ creatues\ to\ the\ stall\ \n
+comment3.params=type
+comment3.target=int\ setType(java.lang.String)
+comment3.text=\n\ \ Numerizes\ the\ type\n\ \ @return\ the\ stall\ types\ in\ numeral\ form\n
+comment4.params=
+comment4.target=java.lang.String\ getOccupant()
+comment5.params=
+comment5.target=Creature\ getCreature()
+comment6.params=
+comment6.target=java.lang.String\ getType()
+comment7.params=
+comment7.target=java.lang.String\ getName()
+comment8.params=
+comment8.target=java.lang.Boolean\ getOccupied()
+comment9.params=
+comment9.target=void\ removeCreature()
+comment9.text=\n\ \ reomves\ the\ creature\ from\ the\ stall\ and\ marks\ it\ as\ open\n
+numComments=10

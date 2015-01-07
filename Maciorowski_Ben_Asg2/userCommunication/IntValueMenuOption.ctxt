@@ -1,0 +1,7 @@
+#BlueJ class context
+comment0.params=option\ description\ data
+comment0.target=IntValueMenuOption(java.lang.String,\ java.lang.String,\ int)
+comment0.text=\r\n\ Constructor\ \r\n\ @param\ option\ the\ option/character\ the\ user\ will\ select\r\n\ @param\ description\ the\ description\ for\ this\ option\r\n\ @param\ data\ associated\ data\ value\ from\ the\ menu\ option\ \r\n
+comment1.params=
+comment1.target=int\ getData()
+numComments=2

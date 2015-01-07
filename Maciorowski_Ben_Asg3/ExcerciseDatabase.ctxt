@@ -1,0 +1,14 @@
+#BlueJ class context
+comment0.params=
+comment0.target=ExcerciseDatabase()
+comment0.text=\n\ Constructor\ for\ objects\ of\ class\ ExcerciseDatabase\n
+comment1.params=excercise
+comment1.target=void\ addExcerciseToArray(Excercise)
+comment1.text=\n\ Adds\ excercise\ items\ and\ their\ calories\ to\ the\ excercises\ array\n\ @param\ a\ excercise\ object\n\ @param\ the\ index\ number\ of\ the\ excercises\ array\ where\ the\ newly\ created\ excercise\ object\ is\ added\ to\n
+comment2.params=index
+comment2.target=Excercise\ getArray(int)
+comment2.text=\n\ Provides\ a\ specific\ emelent\ in\ the\ excercises\ arrayList\ from\ a\ given\ index\ value\n\ @param\ index\ \n\ @param\ Excercise\ element\n
+comment3.params=
+comment3.target=int\ getSize()
+comment3.text=\n\ Provides\ the\ size\ of\ the\ excercises\ arrayList\ \n\ @return\ excercises\ size\n
+numComments=4

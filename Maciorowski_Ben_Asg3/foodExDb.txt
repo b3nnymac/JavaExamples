@@ -1,0 +1,21 @@
+13,7
+Cheese,110
+Large egg,90
+Ice cream,200
+Milk,175
+Bagel,140
+Pasta,330
+Rice,420
+Bacon,250
+Beef,300
+Chicken,220
+Apple,44
+Banana,107
+Spinach,8
+Running 5 mph,39
+Running 7 mph,79
+Squash,11
+Stair machine,8
+Wrestling,5
+Weight lifting (light),2
+Weight lifting (vigorous),5

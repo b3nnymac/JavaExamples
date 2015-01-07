@@ -1,0 +1,21 @@
+#BlueJ class context
+comment0.params=description
+comment0.target=Row(java.lang.String)
+comment0.text=\n\ Constructor\ for\ objects\ of\ class\ Row\n
+comment1.params=stallName\ stallType\ occupancyInfo
+comment1.target=void\ addStall(java.lang.String,\ java.lang.String,\ java.lang.String)
+comment1.text=\n\ adds\ a\ stall\ to\ the\ row\n\ @param\ stallName\ the\ name\ of\ the\ stall\n\ @param\ stallType\ the\ type\ of\ the\ stall\n\ @param\ occupancyInfo\ the\ occupancy\ Info\ of\ the\ stall\n
+comment2.params=stallToRemove
+comment2.target=void\ removeStall(Stall)
+comment2.text=\n\ removes\ a\ stall\ from\ the\ row\n\ @param\ stallToRemove\ the\ stall\ to\ remove\n
+comment3.params=
+comment3.target=java.lang.String\ getDescription()
+comment4.params=
+comment4.target=java.util.ArrayList\ getStalls()
+comment5.params=creatureName\ creatureType\ age\ weight\ specialAttributeValue
+comment5.target=boolean\ findStallNumber(java.lang.String,\ java.lang.String,\ int,\ int,\ int)
+comment5.text=\n\ Determines\ if\ a\ specific\ stall\ is\ filled\ by\ a\ specific\ creature\n
+comment6.params=
+comment6.target=boolean\ findEmptyStall()
+comment6.text=\n\ check\ to\ see\ if\ there\ is\ at\ least\ one\ empty\ stall\n\ @return\ whether\ or\ not\ there\ is\ an\ empty\ stall\n
+numComments=7

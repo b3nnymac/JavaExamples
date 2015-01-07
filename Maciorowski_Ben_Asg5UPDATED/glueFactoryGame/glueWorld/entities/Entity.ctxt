@@ -1,0 +1,36 @@
+#BlueJ class context
+comment0.params=row\ col\ displayImg
+comment0.target=Entity(int,\ int,\ glueFactoryGame.glueWorld.GameImage)
+comment0.text=\n\ default\ constructor\n\ @param\ row\ the\ row\ location\ of\ the\ object\n\ @param\ col\ the\ column\ location\ of\ the\ object\n\ @param\ displayImg\ the\ image\ used\ to\ display\ the\ object\n
+comment1.params=row\ col\ displayImg\ canMoveOnTo\ isSticky
+comment1.target=Entity(int,\ int,\ glueFactoryGame.glueWorld.GameImage,\ boolean,\ boolean)
+comment1.text=\n\ Constructor\n\ @param\ row\ the\ row\ location\ of\ the\ object\n\ @param\ col\ the\ column\ location\ of\ the\ object\n\ @param\ displayImg\ the\ image\ used\ to\ display\ the\ object\n\ @param\ canMoveOnTo\ if\ the\ object\ can\ be\ moved\ onto\ or\ not\n\ @param\ isSticky\ if\ the\ object\ is\ sticky\ or\ not\n
+comment10.params=entity
+comment10.target=int\ distance(Entity)
+comment10.text=\n\ Determines\ the\ distance\ between\ the\ two\ entities\n\ @param\ entity\n\ @return\n
+comment11.params=
+comment11.target=glueFactoryGame.glueWorld.GameImage\ getDisplayImage()
+comment12.params=displayImg
+comment12.target=void\ setdisplayImg(glueFactoryGame.glueWorld.GameImage)
+comment13.params=
+comment13.target=java.lang.String\ toString()
+comment2.params=
+comment2.target=boolean\ canMoveOnTo()
+comment2.text=\n\ used\ to\ indicate\ if\ another\ Entity\ is\ allowed\ to\n\ stand\ on,\ or\ be\ located\ at\ the\ same\ location\n\ as\ the\ current\ entity\n\ @return\ true\ \=\ yes,\ false\ \=\ no\n
+comment3.params=
+comment3.target=boolean\ isEntitySticky()
+comment3.text=\n\ Used\ to\ indicate\ if\ this\ entity\ is\ sticky\ or\ not\n\ @return\ true\ \=\ yes,\ false\ \=\ no\n
+comment4.params=
+comment4.target=int\ getRow()
+comment5.params=value
+comment5.target=void\ setRow(int)
+comment6.params=
+comment6.target=int\ getCol()
+comment7.params=value
+comment7.target=void\ setCol(int)
+comment8.params=row\ col
+comment8.target=void\ setLocation(int,\ int)
+comment9.params=entity
+comment9.target=boolean\ isStandingOn(Entity)
+comment9.text=\n\ Determines\ if\ the\ current\ entity\ is\ occupying\ the\ same\ location\ as\ the\ given\ entity\n\ @param\ entity\n\ @return\ true\ of\ occupy\ same\ location,\ false\ otherwise\n
+numComments=14

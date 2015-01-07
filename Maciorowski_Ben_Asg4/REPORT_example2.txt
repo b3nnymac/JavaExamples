@@ -1,0 +1,46 @@
+Total Creatures in The Stable: 8
+Total number of giants in The Stable: 1
+Total number of centaurs in The Stable: 2
+Total number of dragons in The Stable: 1
+Total number of unicorns in The Stable: 1
+Total number of basilisks in The Stable: 1
+Total number of djinns in The Stable: 1
+Total number of chimeras in The Stable: 1
+
+**************Current Occupancy Information**************
+| Row |             Row Name | Stall |           Stall Name | Stall Type | Vacancy | 
+|   1 |                   RA |     1 |                   SA |          F |       C |
+                                   2 |                   SB |          M |       C |
+                                   3 |                   SC |          I |       D |
+                                   4 |                   SD |          C |       U |
+|   2 |                   RB |     1 |                   SE |          F |       # |
+                                   2 |                   SF |          I |       # |
+|   3 |                   RC |     1 |                   SG |          F |       # |
+                                   2 |                   SH |          M |       B |
+                                   3 |                   SI |          I |       C |
+                                   4 |                   SJ |          M |       D |
+                                   5 |                   SK |          I |       G |
+                                   6 |                   SL |          C |       # |
+|   4 |                   RD |   *************Row Contains Zero Stalls************
+|   5 |                   RE |     1 |                   SM |          F |       # |
+                                   2 |                   SN |          M |       # |
+                                   3 |                   SO |          I |       # |
+                                   4 |                   SP |          C |       # |
+                                   5 |                   SQ |          F |       # |
+                                   6 |                   SR |          M |       # |
+                                   7 |                   SS |          I |       # |
+                                   8 |                   ST |          C |       # |
+                                   9 |           Boner stal |          M |       # |
+
+
+************All Creatues in the Stable****************
+|           Stall Name | Row Number | Stall Number | Creature Name | Creature Type |   Age | Weight | Special Attribute Value |
+|                   SA |          1 |            1 |            C1 |       CHIMERA |     1 |     11 |                       1 |
+|                   SB |          1 |            2 |        Hannah |       CENTAUR |    31 |     34 |                       0 |
+|                   SC |          1 |            3 |            C2 |        DRAGON |     2 |     22 |                       5 |
+|                   SD |          1 |            4 |            C3 |       UNICORN |     3 |     33 |                      -1 |
+|                   SH |          3 |            2 |            C4 |      BASILISK |     4 |     44 |                       4 |
+|                   SI |          3 |            3 |            C5 |       CENTAUR |     5 |     55 |                      -1 |
+|                   SJ |          3 |            4 |            C6 |         DJINN |     6 |     66 |                       3 |
+|                   SK |          3 |            5 |            C7 |         GIANT |     7 |     77 |                      10 |
+

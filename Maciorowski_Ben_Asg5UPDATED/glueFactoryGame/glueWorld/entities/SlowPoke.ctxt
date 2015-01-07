@@ -1,0 +1,7 @@
+#BlueJ class context
+comment0.params=row\ col\ unStuckImage\ stuckImage
+comment0.target=SlowPoke(int,\ int,\ glueFactoryGame.glueWorld.GameImage,\ glueFactoryGame.glueWorld.GameImage)
+comment0.text=\r\n\ Constructor\ for\ objects\ of\ class\ User\r\n
+comment1.params=
+comment1.target=void\ move()
+numComments=2

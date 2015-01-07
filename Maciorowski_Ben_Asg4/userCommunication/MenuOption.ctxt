@@ -1,0 +1,18 @@
+#BlueJ class context
+comment0.params=option\ description
+comment0.target=MenuOption(java.lang.String,\ java.lang.String)
+comment0.text=\n\ Constructor\ \n\ @param\ option\ the\ option/character\ the\ user\ will\ select\n\ @param\ description\ the\ description\ for\ this\ option\n
+comment1.params=usersChoice
+comment1.target=boolean\ isAMatch(java.lang.String)
+comment1.text=\n\ Determines\ if\ the\ given\ character\ matches\ the\ current\ menu\ option\ object\n\ @param\ usersChoice\ the\ char\ given\ by\ the\ user\n\ @return\ true\ for\ a\ match,\ false\ otherwise\n
+comment2.params=
+comment2.target=java.lang.String\ getOption()
+comment3.params=
+comment3.target=java.lang.String\ getdescription()
+comment4.params=firstLength
+comment4.target=java.lang.String\ formatedOutput(int)
+comment4.text=\n\ Formated\ string\ for\ use\ when\ displaying\ all\ options\ for\ the\ menu\n\ @param\ firstLength\ the\ minim\ number\ of\ characters\ used\ for\ spacing\ of\ the\ option\ string\n\ @return\n
+comment5.params=
+comment5.target=java.lang.String\ toString()
+comment5.text=\n\ \ Formated\ string\ for\ use\ when\ displaying\ all\ options\ for\ the\ menu\n
+numComments=6

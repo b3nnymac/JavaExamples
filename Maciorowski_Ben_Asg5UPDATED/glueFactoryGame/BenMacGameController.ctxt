@@ -1,0 +1,26 @@
+#BlueJ class context
+comment0.params=
+comment0.target=BenMacGameController()
+comment1.params=
+comment1.target=int\ numBombsUserHas()
+comment1.text=\n\ Returns\ the\ current\ number\ of\ bobs\ the\ user\ has\n\ @return\ the\ number\ of\ bombs\ the\ user\ currently\ has\n
+comment2.params=
+comment2.target=boolean\ hasUserWonGame()
+comment2.text=\n\ Called\ to\ determine\ if\ the\ user\ has\ won\ the\ game\ or\ not\n\ @return\ true\ if\ they\ have\ won,\ false\ otherwise\n
+comment3.params=where
+comment3.target=void\ userMoveRequest(Direction)
+comment3.text=\n\ Deals\ with\ a\ request\ from\ the\ user\ to\ move\ the\ avatar\ in\ the\ desired\ direction\n\ @param\ where\ the\ direction\ to\ move\n
+comment4.params=where
+comment4.target=void\ placeGlue(Direction)
+comment4.text=\n\ Deals\ with\ a\ request\ from\ the\ user\ to\ place\ glue\ in\ a\ location\ where\ the\ avatar\ currently\ is\n\ @param\ where\ the\ direction\ to\ place\ the\ glue\ in\n
+comment5.params=
+comment5.target=void\ updateWorldState()
+comment5.text=\n\ Called\ to\ request\ an\ update\ to\ \ the\ world\ state\ including\ moving\ NPC's.\n\ Should\ properly\ move\ all\ NPC's\ in\ the\ world\ and\ update\ basic\ game\ statistics\ \n\ if\ there\ are\ any\n
+comment6.params=fileName
+comment6.target=void\ loadFile(java.lang.String)
+comment6.text=\n\ Called\ to\ load\ a\ game\ file\ into\ the\ system\n\ @param\ fileName\ the\ path\ and\ name\ of\ the\ file\ to\ load\n\ @throws\ Exception\ thrown\ if\ any\ major\ errors\ occur\ while\ loading\ the\ file\ \n
+comment7.params=
+comment7.target=void\ readFile()
+comment8.params=userImageNumber
+comment8.target=glueWorld.GameImage\ getUserGameImage(int)
+numComments=9

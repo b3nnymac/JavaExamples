@@ -1,0 +1,47 @@
+package glueFactoryGame.glueWorld.entities;
+import glueFactoryGame.*;
+import glueFactoryGame.glueWorld.GameImage;
+import glueFactoryGame.glueWorld.GlueWorld;
+
+/**
+ * Write a description of class SolventBot here.
+ * 
+ * @author (your name) 
+ * @version (a version number or a date)
+ */
+public class Ghost extends MovingEntity
+{
+    private boolean stuck;
+    private boolean stickable; // used to indicate if the moving entity can be stuck by glue 
+    private GameImage stuckImage;
+    private GameImage unStuckImage;
+    private GameRandomNumber randomNumber;
+    private Direction direction;
+    private GlueWorld world;
+
+    /**
+     * Constructor for objects of class User
+     */
+    public Ghost(int row, int col,GameImage displayImg,GameImage stuckImage)
+    {
+        super (row,  col, displayImg, stuckImage);
+    }
+
+    public void move() {
+        int moveNum = randomNumber.getInstance().next(4);
+        int[] move = Direction.getDirectionOffsets(Direction.ALL_DIRECTIONS[moveNum]);
+        int newRow = getRow() + move[0];
+        int newCol = getCol() + move[1];
+        	
+        if(world.inBounds(newRow, newCol)){
+
+            if (!world.canLocationbeMovedOnto(newRow, newCol) &&  !world.get(newRow, newCol).isEntitySticky()){
+                world.remove(this);
+                world.place(newRow, newCol, this);  
+                setLocation(newRow, newCol);
+
+            }
+
+        }
+    }
+}

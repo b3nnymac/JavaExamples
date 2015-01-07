@@ -1,0 +1,19 @@
+#BlueJ class context
+comment0.params=
+comment0.target=void\ run()
+comment1.params=
+comment1.target=void\ setUpMenu()
+comment1.text=\n\ sets\ up\ the\ main\ menus\ \ \ \n
+comment2.params=
+comment2.target=Person\ getHealthInfo()
+comment2.text=\n\ Asks\ the\ user\ to\ input\ their\ required\ health\ info\n\ @return\ person\ object\n
+comment3.params=
+comment3.target=int\ setUpGenderMenu()
+comment3.text=\n\ Sets\ up\ a\ menu\ with\ 3\ gender\ options\ and\ waits\ for\ user\ to\ enter\ gender\ option,\ coverts\ option\ to\ numerical\ \n\ representation\ 0\=male,\ 1\=female,\ 2\=gender\ neutral\n\ @return\ the\ numerical\ representation\ of\ the\ user's\ gender\n
+comment4.params=
+comment4.target=double\ setUpActivityMenu()
+comment4.text=\n\ Sets\ up\ an\ activity\ level\ option\ menu\ for\ the\ user\ and\ waits\ to\ receive\ their\ selection\n\ @retun\ the\ numerical\ representation\ of\ the\ user's\ activity\ level\n
+comment5.params=
+comment5.target=void\ editMenuOptions()
+comment5.text=\n\ The\ edit\ options\ from\ the\ main\ menu;\ asks\ the\ user\ which\ informationy\ the\ would\ like\ to\ edit\n
+numComments=6

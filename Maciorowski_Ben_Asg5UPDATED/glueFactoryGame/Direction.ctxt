@@ -1,0 +1,5 @@
+#BlueJ class context
+comment0.params=where
+comment0.target=int[]\ getDirectionOffsets(Direction)
+comment0.text=\n\ Returns\ offsets\ that\ can\ be\ used\ in\ relation\ to\ a\ direction\n\ @param\ where\ the\ direction\ to\ get\ the\ offsets\ for\n\ @return\ the\ offsets\ and\ an\ array.\ col\ \=\ 0\ (\ row\ offset),\ col\ \=\ 1\ (\ col\ offset)\n
+numComments=1

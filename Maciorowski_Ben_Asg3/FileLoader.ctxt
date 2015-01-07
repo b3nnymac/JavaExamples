@@ -1,0 +1,14 @@
+#BlueJ class context
+comment0.params=fileName
+comment0.target=void\ openFile(java.lang.String)
+comment0.text=\n\ Opens\ a\ file\ and\ determines\ if\ it\ is\ valid\ witha\ track\ catch\ statement\n\ @param\ fileName\ the\ name\ of\ the\ given\ file\ \n
+comment1.params=
+comment1.target=void\ readFile()
+comment1.text=\n\ reads\ the\ contents\ of\ a\ file,\ parsing\ specific\ portions,\ and\ instantiate\ variables\ to\ create\ Person\ objects,\ and\ \n\ add\ them\ to\ an\ array\n
+comment2.params=
+comment2.target=void\ foodExcerciseLoader()
+comment2.text=\n\ Opens\ a\ pre-determined\ text\ file\ containing\ a\ pre-formatted\ list\ of\ foods\ and\ excercises\n\ creates\ and\ adds\ foods\ and\ excercises\ to\ arrays\ to\ be\ accessed\ by\ the\ health\ tracker\ class\n
+comment3.params=
+comment3.target=void\ saveToFile()
+comment3.text=\n\ Overwrites\ the\ contents\ of\ the\ given\ file\ name\ with\ the\ updated\ trainee\ database\ info\n\ \n
+numComments=4

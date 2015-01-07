@@ -1,0 +1,8 @@
+2,2
+Row of wonder,3
+Stall of Dred,MAGIC,GREG
+Stall of darkness,INDESTRUCTABLE,OPEN
+Happy Land,CLOWN,WARMACHINE
+Row of Nothing,0
+GREG,DJINN,33,2,10
+WARMACHINE,UNICORN,1000,500,-1

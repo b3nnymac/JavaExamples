@@ -1,0 +1,21 @@
+#BlueJ class context
+comment0.params=row\ col\ displayImg\ stuckImage
+comment0.target=MovingEntity(int,\ int,\ glueFactoryGame.glueWorld.GameImage,\ glueFactoryGame.glueWorld.GameImage)
+comment0.text=\n\ Sets\ up\ a\ moving\ entity\ that\ can\ be\ stuck\ by\ glue\n\ @param\ row\ the\ row\ location\ of\ the\ object\n\ @param\ col\ the\ column\ location\ of\ the\ object\n\ @param\ displayImg\ the\ image\ used\ to\ display\ the\ object\n\ @param\ stuckImage\ the\ image\ to\ use\ when\ the\ entity\ is\ stuck\ by\ glue\n
+comment1.params=row\ col\ displayImg
+comment1.target=MovingEntity(int,\ int,\ glueFactoryGame.glueWorld.GameImage)
+comment1.text=\n\ Sets\ up\ a\ moving\ entity\ that\ can\ not\ be\ stuck\ by\ glue\n\ @param\ row\ the\ row\ location\ of\ the\ object\n\ @param\ col\ the\ column\ location\ of\ the\ object\n\ @param\ displayImg\ the\ image\ used\ to\ display\ the\ object\n
+comment2.params=
+comment2.target=boolean\ isStuck()
+comment3.params=
+comment3.target=boolean\ canBeStuckByGlue()
+comment4.params=
+comment4.target=void\ setEntityStuck()
+comment4.text=\n\ Sets\ the\ entities\ state\ to\ being\ stuck\ and\ updates\ the\ display\ image\ to\ be\ the\ stuck\ image\n
+comment5.params=
+comment5.target=void\ setEntityUnStuck()
+comment5.text=\n\ Sets\ the\ entities\ state\ to\ being\ unstuck\ and\ updates\ the\ display\ image\ to\ be\ the\ orignal\ image\n
+comment6.params=
+comment6.target=void\ move()
+comment6.text=\n\ When\ called\ this\ method\ executes\ the\ move\n\ operation\ of\ the\ entity.\ Once\ completed\n\ the\ entity's\ location\ and\ state\ should\ be\ updated\n\ \n\ This\ method\ should\ be\ overridden\ in\ children\ classes\ \n
+numComments=7

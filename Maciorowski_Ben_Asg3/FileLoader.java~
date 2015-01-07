@@ -1,0 +1,129 @@
+import java.io.*;
+import userCommunication.*;
+import java.util.*;
+
+public class FileLoader {
+    private UserInteraction comm = new UserInteraction();
+    private Scanner inputFile;   
+    private HealthTracker tracker = new HealthTracker();
+    
+    public Person[] personArray= new Person[tracker.DATABASE_SIZE];
+    public Food[] foods;
+    public Excercise[] excercises;
+    public int numOfFoods = 0;
+    public int  numOfExcercises = 0;
+
+    private int count = 0;
+
+    public  void  openFile(String fileName){
+        try{
+            inputFile = new Scanner(new File(fileName));
+            readFile();
+        }
+        catch(Exception error){
+            System.out.println("Could not load file");
+
+        }
+    }
+
+    public void readFile(){
+
+        while (inputFile.hasNext() && count < tracker.DATABASE_SIZE){
+            String line = inputFile.nextLine();
+            String[] parts = line.split(",");
+            String fullName = parts[0];
+            int age = Integer.parseInt(parts[1]);
+            double weight = Double.parseDouble(parts[2]);
+            double height = Double.parseDouble(parts[3]);
+            double totalCalories = Double.parseDouble(parts[4]);
+            double activityLevel = Double.parseDouble(parts[5]);
+            String gender = parts[6];
+
+            tracker.addTrainee(new Person(fullName, weight, age, height, gender, activityLevel));
+            
+        }
+
+        comm.print(count + " Trainees were added to the database\n");
+    }
+
+    public void printDBArray(){
+        String dottedLine = "----------------------------------------------------------------------------------------------------------------------------------";
+        System.out.println((dottedLine + String.format("\n%3s|%18s |%12s |%9s |%6s |%9s |%17s | %15s" , "#","Full Name","Total Cal", "Weight","Age", "Weight", "Gender", "Activity Level\n")
+                + dottedLine));
+        int num = 0;
+
+        while(num < personArray.length ){
+            if(personArray[num] != null){
+                //System.out.println(String.format("%3d|%18s |%12.2f |%9.2f |%6d |%9.2f", num+1, personArray[num].getFullName(),personArray[num].getTotalCalories(), personArray[num].getWeight(),personArray[num].getAge(), personArray[num].getWeight()));
+                System.out.println(String.format("%3d|%18s |%12.2f |%9.2f |%6d |%9.2f |%17s | %15s" , num+1, personArray[num].getFullName(),personArray[num].getTotalCalories(), personArray[num].getWeight(),personArray[num].getAge(), personArray[num].getWeight(), personArray[num].getGender(), personArray[num].getActivityLevel()));
+
+            }
+            num++;
+        }
+    }
+
+    public void foodExcerciseLoader(){
+        try{inputFile = new Scanner(new File("foodExDb.txt"));}
+        catch(Exception error){System.out.println("Could not open file");}
+
+        String line = inputFile.nextLine();
+        String[] parts = line.split(",");
+        numOfFoods = Integer.parseInt(parts[0]);
+        numOfExcercises = Integer.parseInt(parts[1]);
+        
+        tracker.instantiateFoodArray(numOfFoods);
+      
+
+        for (int foodCount = 0; foodCount<numOfFoods; foodCount++){
+            line = inputFile.nextLine();
+            String[] foodParts = line.split(",");
+            String foodName = foodParts[0];
+            int calories = Integer.parseInt(foodParts[1]);
+            tracker.addFoodToArray() foods[foodCount] = new Food(foodName, calories);
+
+        }
+        comm.print(""+ numOfFoods + " foods were added to the database\n");
+        for (int excerciseCount = 0; excerciseCount<excercises.length;excerciseCount++){
+            line = inputFile.nextLine();
+            String[] excerciseParts = line.split(",");
+            String excerciseName = excerciseParts[0];
+            int calories = Integer.parseInt(excerciseParts[1]);
+            excercises[excerciseCount] = new Excercise(excerciseName, calories);
+        }
+        comm.print(""+ numOfExcercises + " excercise were added to the database\n");
+        comm.pause();
+    }
+
+    public boolean checkIfSpaceAvailable()
+    {
+        boolean spaceAvaiable = false; 
+
+        for(int num = 0; num < personArray.length; num++){
+            if(personArray[num] == null) {spaceAvaiable = true; break;}
+
+        }
+
+        return spaceAvaiable;
+    }
+
+    public boolean checkIfSpecificSpaceAvailable(int specificSpace)
+    {
+        boolean spaceAvaiable = false;
+        if(personArray[specificSpace] == null) spaceAvaiable = true;
+        return spaceAvaiable;
+
+    }
+
+    public void addTrainee(Person person){
+        for(int num = 0; num < personArray.length; num++){
+            if(personArray[num] == null) 
+            {personArray[num] = person; count++; break;}
+        }
+    }
+
+    public void removeTrainee(int traineeNumToRemove){
+        personArray[traineeNumToRemove] = null;
+        count--;
+    }
+
+}

@@ -1,0 +1,22 @@
+#BlueJ class context
+comment0.params=
+comment0.target=int\ numBombsUserHas()
+comment0.text=\n\ Returns\ the\ current\ number\ of\ bobs\ the\ user\ has\n\ @return\ the\ number\ of\ bombs\ the\ user\ currently\ has\n
+comment1.params=
+comment1.target=boolean\ hasUserWonGame()
+comment1.text=\n\ Called\ to\ determine\ if\ the\ user\ has\ won\ the\ game\ or\ not\n\ @return\ true\ if\ they\ have\ won,\ false\ otherwise\n
+comment2.params=where
+comment2.target=void\ userMoveRequest(glueFactoryGame.Direction)
+comment2.text=\n\ Deals\ with\ a\ request\ from\ the\ user\ to\ move\ the\ avatar\ in\ the\ desired\ direction\n\ @param\ where\ the\ direction\ to\ move\n
+comment3.params=where
+comment3.target=void\ placeGlue(glueFactoryGame.Direction)
+comment3.text=\n\ Deals\ with\ a\ request\ from\ the\ user\ to\ place\ glue\ in\ a\ location\ where\ the\ avatar\ currently\ is\n\ @param\ where\ the\ direction\ to\ place\ the\ glue\ in\n
+comment4.params=
+comment4.target=void\ updateWorldState()
+comment4.text=\n\ Called\ to\ request\ an\ update\ to\ \ the\ world\ state\ including\ moving\ NPC's.\n\ Should\ properly\ move\ all\ NPC's\ in\ the\ world\ and\ update\ basic\ game\ statistics\ \n\ if\ there\ are\ any\n
+comment5.params=fileName
+comment5.target=void\ loadFile(java.lang.String)
+comment5.text=\n\ Called\ to\ load\ a\ game\ file\ into\ the\ system\n\ @param\ fileName\ the\ path\ and\ name\ of\ the\ file\ to\ load\n\ @throws\ Exception\ thrown\ if\ any\ major\ errors\ occur\ while\ loading\ the\ file\ \n
+comment6.params=
+comment6.target=void\ readFile()
+numComments=7
